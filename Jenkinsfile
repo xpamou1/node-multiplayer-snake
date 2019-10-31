@@ -72,6 +72,15 @@ node ('ubuntu'){
             sh 'echo "DAST Test passed"'
         
     }
+   
+   post {
+        always {
+            
+                    emailext body: "<p>Check console output at <a href='${env.BUILD_URL}'> ${env.JOB_NAME}</a></p>", 
+                    mimeType: 'text/html',
+                    subject: "Job '${env.JOB_NAME}' '${env.BUILD_NUMBER}'", 
+                    to: 'trainingfordevsecops@gmail.com'
+        }
 
     
 }
