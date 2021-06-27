@@ -120,7 +120,7 @@ class AdminService {
         }
         const newBotId = this.nameService.getBotId();
         const newBot = this.playerService.createPlayer(newBotId, newBotId);
-        this.notificationService.broadcastNotification(`${newBot.name} has joined!`, newBot.color);
+        this.notificationService.broadcastNotification(`${newBot.name} has joined im Game!`, newBot.color);
         this.botIds.push(newBot.id);
     }
 

@@ -37,7 +37,7 @@ class PlayerService {
         const newPlayer = this.createPlayer(socket.id, playerName);
         socket.emit(ServerConfig.IO.OUTGOING.NEW_PLAYER_INFO, playerName, newPlayer.color);
         socket.emit(ServerConfig.IO.OUTGOING.BOARD_INFO, Board);
-        this.notificationService.broadcastNotification(`${playerName} has joined!`, newPlayer.color);
+        this.notificationService.broadcastNotification(`${playerName} has joined im Game!`, newPlayer.color);
         const backgroundImage = this.imageService.getBackgroundImage();
         if (backgroundImage) {
             socket.emit(ServerConfig.IO.OUTGOING.NEW_BACKGROUND_IMAGE, backgroundImage);
